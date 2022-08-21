@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>QS |     Registration</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" >
+    <link rel="stylesheet" th:href="@{/CSS/user-form.css}">
+    <link rel="stylesheet" th:href="@{/CSS/bootstrap.css}">
+</head>
+
+<body>
+    <div class="content-form">
+        <h1 th:text="Registration"></h1>
+        <h1 th:if="${message}!=null"> <span class="class" th:text="${message}"></span></h1>
+
+        <hr>
+
+        <form id="user_form" th:action="@{/api/register}" method="POST" th:object="${user}">
+            <label>first Name</label>
+            <input class="form-control" type="text" name="firstName" th:field="*{firstname}" th:required="true">
+            <label>Last Name</label>
+            <input class="form-control" type="text" name="lastName" th:field="*{lastname}" th:required="true">
+            <label>Email</label>
+            <input class="form-control" type="text" name="email" th:utext="${email}" th:required="true">
+            <label>Date Of Birth</label>
+            <input class="form-control" type="date" name="dateOfBirth" th:field="*{dateofbirth}" th:required="true">
+
+            <label>Gender</label>
+            <div class="radio" >
+                <input type="radio" name="gender" value="M" th:field="*{gender}" th:required="true">
+                <label>Male</label>
+                <input type="radio" name="gender" value="F" th:field="*{gender}" th:required="true">
+                <label>Famale</label>
+            </div>
+            <label>Password</label>
+            <input class="form-control" type="password" name="password" minlength="6" th:field="*{password}" th:required="true">
+
+            <input class="btn btn-primary" type="submit" value="Submit">
+
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title> QS | Identification</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/CSS/bootstrap.css}"/>
+        <link rel="stylesheet" th:href="@{/CSS/login-css.css}"/>
+    </head>
+    <body>
+        <div class="userForm" >
+            <form class="form " id="form" th:action="@{/api/authenticate}" th:object="${LoginModel}" th:method="POST">
+                <fieldset><legend class="mx-5">LOGIN</legend>
+                    
+                    <div class="logo m-2">
+                        <img class="p-4 d-block m-auto " id="image" th:src="@{/images/Logo.png}" alt="logo"/>
+              
+                        <label class="bg bg-opacity-25 text text-danger text-lg ">[[${message}]]</label>
+                        <input class="form-control mx-5 p-3 w-75 my-3 bg-transparent" th:field="*{email}" type="email" id="email-id" placeholder="Email"><br>
+                        <input class="form-control mx-5 p-3 w-75 bg-transparent" th:field="*{password}" type="password" placeholder="********" id="password-id" minlength="6"><br>
+                        <input class="btn btn-primary mx-5 w-75 " type="submit" id="button" value="Submit">
+                        <div class="New-user mx-5 p-3">
+                            <label for="register" class="py-2">Are you New to this system? <a th:href="@{register}" id="register">Click here to Register.</a></label><br>
+                            <label for="forgot-password" class="py-2 px">Password Forgot? <a href="#" id="forgot-password">Click here</a></label>
+                        </div>
+                    </div>
+                    
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+.content {
+    display: grid;
+    grid-template-columns: 280px auto;
+    width: auto;
+    height: 100vh;
+}
+
+.content aside {
+    padding: 10px;
+}
+
+.content main {
+    padding: 10px;
+}
+
+.content aside .admin-operation {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+}
+
+.admin-operation form {
+    height: 45px;
+}
+
+.admin-operation input {
+    width: 100%;
+    height: 40px;
+    padding: 0;
+}
+
+.admin-operation input:hover {
+    transform: scale(0.98);
+    background-color: #0dcaf0;
+    animation: popup .5s ease-in-out;
+}
+.admin-operation a:hover {
+    transform: scale(0.98);
+    background-color: #0dcaf0;
+    animation: popup .5s ease-in-out;
+}
+
+@keyframes popup {
+    50% {
+        transform: scale(1.02);
+    }
+}
+
+.t-data{
+    display: flex;
+    
+}
+.item{
+    display: flex;
+    flex-direction: column;
+}

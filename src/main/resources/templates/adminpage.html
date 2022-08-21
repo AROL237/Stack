@@ -1,0 +1,82 @@
+<htm<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Question Stack Admin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/CSS/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/CSS/Admin_index.css}">
+        <link rel="stylesheet" th:href="@{/CSS/index-css.css}">
+
+
+</head>
+
+<body>
+   
+
+     <header>
+            <nav class="navbar p-3 bg-info">
+                <img class="user-image" th:src="@{/images/Logo.png}" alt="UserLogo"/>
+                <label class="text-capitalize ">[[${session.user.email}]]</label>
+                
+            </nav>
+        </header>
+
+
+    <div class="container-fluid">
+        <section class="content">
+            <aside class="operation bg-gradient ">
+                
+                <div class="admin-operation">
+                    <label class="display-6 text-capitalize text-light">operation</label>
+                    <a href="/stack.html" class='btn alert-info text-capitalize my-3' th:href="@{/user/index}">switch to user</a>
+                    <form th:method="Get" th:action="@{/user/AdminOperations}">
+                        <input class="alert alert-info" type='submit' value="New Paper">
+                    </form>
+                    <form th:method="GET" th:action="@{/manageUser}">
+                        <input class="alert alert-info" type="submit" value="Make user Administrator" />
+                    </form>
+                    <form method="Get" th:action="@{/AdminOperation}">
+                        <input class="alert alert-info" type="submit" value="List Of users" name="operation">
+                    </form>
+                </div>
+            </aside>
+            <main>
+                <table class="table">
+                    <thead class="table table-dark">
+                        <tr>
+                            <th class="display-5 text-center ">
+                                Paper
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="table table-responsive-lg table-responsive-md table-responsive-sm table-responsive table-hover">
+                        <tr th:each="paper :${papers}">
+                            <td class="" >
+                                <div class="" id="t-data" >
+                                <img th:src="@{/image/pdf-icon-125674.png}" alt="pdf-log" height="60"/>
+                                <span class="item">
+                                    <label> Exam:   [[${}]]</label>
+                                   <label> Specialty : [[${}]]</label>
+                                   <label> subject Name:  [[${}]]</label>
+                                   <label> Subject Code:   [[${}]]</label>
+                                   <label> Year:   [[${}]]</label>
+                                </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </section>
+
+
+    </div>
+</body>
+
+</html>

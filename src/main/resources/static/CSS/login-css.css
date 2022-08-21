@@ -1,0 +1,38 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 29, 2022, 8:37:59 AM
+    Author     : SIGNING
+*/
+
+body {
+    background-image: url(../images/work\ site.jpg);
+    background-color: rgb(213, 204, 204);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+* {
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#image {
+    border-radius: 360rem;
+}
+
+form {
+    background-color: rgb(141, 184, 216);
+    border-radius: 10px;
+}
+
+.userForm {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 35%;
+    margin-top: 1cm;
+}

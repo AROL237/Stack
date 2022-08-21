@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://wwww.thymeleaf.org">
+    <head>
+        <title>Question Stack</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/CSS/bootstrap.css}"/>
+        <link rel="stylesheet" th:href="@{/CSS/index-css.css}"/>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar p-3 bg-info">
+                <img class="user-image" th:src="@{/images/Logo.png}" alt="UserLogo"/>
+                <label class="text-capitalize ">[[${session.user.email}]]</label>
+                
+            </nav>
+        </header>
+        <main>
+            
+            <div class="container ">
+                <div class="buttons" th:each="roles : ${session.user.roleSet}">
+                    <a th:href="@{/user/adminpage}"th:if=" ${roles.role} == 'ADMIN'" class='btn btn-outline-info bg-body m-2 '>Switch to Admin</a>
+                </div>
+                <div class="">
+                     <form class="form my-3">
+                         <input class="form-control w-25" type="text" id="search-input">
+                         <input type="submit" class="mx-1 px-2" value="Search">
+                    </form>
+                </div>
+                <div>
+                    <table class="table my-4 border-1">
+                        <thead class="table table-dark"> 
+                            <tr class="h-25">
+                                <th>Passed Evaluation Papers</th>
+                                <th>Actions</th>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
+                            <tr th:each=" paper: ${papers}">
+                                <td >
+                                    <img th:src="@{/image/pdf-icon.png}" alt="pdf-icon"/>
+                                    <div id="paper-label" th:key="${paper.pid}">
+                                        <label>Exam  </label>
+                                        <label>Specialty </label>
+                                        <label>course </label>
+                                        <label>Year </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="submit" value="Download" name="download-pdf" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>            
+        </main>
+    </body>
+</html>

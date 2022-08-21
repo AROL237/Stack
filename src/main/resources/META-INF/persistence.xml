@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.Signing_Stack_jar_0.0.1-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.Signing.Stack.Model.Options</class>
+    <class>com.Signing.Stack.Model.Payment</class>
+    <class>com.Signing.Stack.Model.User</class>
+    <class>com.Signing.Stack.Model.Specialty</class>
+    <class>com.Signing.Stack.Model.Exam</class>
+    <class>com.Signing.Stack.Model.Role</class>
+    <class>com.Signing.Stack.Model.Paper</class>
+    <class>com.Signing.Stack.Model.SpePaper</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/stack?zeroDateTimeBehavior=CONVERT_TO_NULL"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="Nzonkem@237"/>
+    </properties>
+  </persistence-unit>
+</persistence>

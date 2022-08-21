@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Question Stack</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" th:href="@{/CSS/bootstrap.css}">
+        <link rel="stylesheet" th:href="@{/CSS/question-paper.css}">
+        <link rel="stylesheet" th:href="@{/CSS/userForm.css}">
+    </head>
+    <body class="bg-transparent">
+        <div id="paper">
+            <section class="my-5 mx-5 text-capitalize">
+               
+                <h3> [[${message}]] </h3>
+                <form  th:object="${paper}" class="form-control bg-info mx-auto w-50 my-auto mx-5 p-3" th:action="@{/addQuestionPaper}" method="POST"  enctype="multipart/form-data">
+                    <fieldset><legend class="title mx-auto" >Paper recording</legend>
+                        <select class="form-control my-3" id="exam-id">
+                            <option value="HND" selected="true">HND</option>
+                        </select>
+                        <select class=" my-3" id="option-id" >
+                            <option  disabled="true" selected="true">--select option--</option>
+                            <option th:each="opt: ${options}" th:id="${opt.opId}"th:value="${opt.opName}" >[[${opt.opName}]]</option>
+                        </select>
+                        <br>
+                        
+                         <select th:feild="*{paper.spePaperPK.opId}" class="my-3" id="specialty-id">
+                             <option disabled="true" selected="true">--select specialty--</option>
+                             <option   th:each="spe :${specialties}" th:id="${spe.specialtyPK.spCode}" th:value="${spe.spName}" >[[${spe.spName}]]</option>
+                        </select>
+                        
+                        
+                        <input class="form-control my-3 " placeholder="year Example 2015 " type="tel" maxlength="4">
+                        <input class="form-control my-3" type="tel" id="level-id" placeholder="level Example 1" maxlength="1">
+                        
+                        
+                    <label>Paper</label>                    
+                    <input class="form-control" type="file" id="question" value="upload" name="QuestionFile" accept=".doc,.docx,application/msword,application/pdf" >
+                    <label>Solution paper</label>
+                    <input class="form-control" type="file" id="solution"  value="upload"  name="SolutionFile" accept=".doc,.docx,application/msword,application/pdf" >
+                    
+                    <input id="save" class="btn btn-primary  my-3 " type="submit" value="Save">
+                    </fieldset> 
+                </form>
+               
+            </section>
+        </div>
+    </body>
+</html>

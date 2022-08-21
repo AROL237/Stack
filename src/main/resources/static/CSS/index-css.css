@@ -1,0 +1,26 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jun 29, 2022, 7:45:31 PM
+    Author     : SIGNING
+*/
+
+body {
+    background-image: url(../images/hero.jpg);
+    background-attachment: fixed;
+    background-color: rgb(213, 204, 204);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.user-image {
+    border-radius: 360px;
+    height: 50px;
+}
+
+form {
+    display: flex
+}
+
